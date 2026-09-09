@@ -1,0 +1,61 @@
+:host {
+  display: block;
+}
+
+.intro {
+  padding: 72px 0 48px;
+}
+@media (max-width: 560px) {
+  .intro {
+    padding: 48px 0 40px;
+  }
+}
+.intro .lede {
+  font-size: 18px;
+}
+
+.block-clients {
+  padding-bottom: 64px;
+}
+
+.rule-head.tight {
+  margin-bottom: 10px;
+}
+.sub {
+  font-size: 16px;
+  color: var(--ink-2);
+  margin: 0 0 24px;
+  max-width: 56ch;
+}
+
+.block-personal .row {
+  background: var(--surface);
+  padding: 26px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px 32px;
+  transition: background 200ms var(--ease);
+}
+.block-personal .row:hover {
+  background: var(--surface-2);
+}
+.block-personal .name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.block-personal .stack {
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.block-personal .desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.cta {
+  margin-top: 20px;
+}

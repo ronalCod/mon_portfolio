@@ -1,0 +1,69 @@
+:host {
+  display: block;
+}
+
+.intro {
+  padding: 72px 0 40px;
+}
+@media (max-width: 560px) {
+  .intro {
+    padding: 48px 0 32px;
+  }
+}
+.page-title.narrow {
+  max-width: 24ch;
+}
+
+.card-contact {
+  padding: 48px 40px;
+}
+@media (max-width: 560px) {
+  .card-contact {
+    padding: 32px 22px;
+  }
+}
+
+.coords {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px 40px;
+  margin-bottom: 36px;
+}
+.value {
+  font-size: 16px;
+  color: var(--panel-fg);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+  transition: color 200ms var(--ease);
+}
+.value:hover {
+  color: var(--accent-on-dark);
+  text-decoration: none;
+}
+.value--plain {
+  border-bottom: 0;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 32px;
+  border-top: 1px solid var(--accent);
+}
+.cta-primary {
+  background: var(--panel-fg);
+  color: var(--panel-bg);
+}
+.cta-primary:hover {
+  background: var(--accent);
+  color: var(--panel-bg);
+}
+.cta-ghost {
+  border-color: var(--accent);
+  color: var(--panel-fg);
+}
+.cta-ghost:hover {
+  background: var(--panel-bg-2);
+  color: var(--panel-fg);
+}

@@ -1,0 +1,48 @@
+<section class="intro reveal">
+  <p class="mono eyebrow">// réalisations</p>
+  <h1 class="page-title">Des projets en ligne, consultables</h1>
+  <p class="lede">
+    Une dizaine de sites livrés pour des clients — en voici quatre, consultables en ligne. Plus
+    trois outils que j'ai construits de mon côté pour apprendre et me simplifier la vie.
+  </p>
+</section>
+
+<section class="block-clients">
+  <div class="rule-head">
+    <h2>En ligne, pour des clients</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="grid-cards">
+    @for (p of clients; track p.name; let i = $index) {
+      <div class="reveal" [style.--d.ms]="80 + i * 80">
+        <app-project-card [project]="p" />
+      </div>
+    }
+  </div>
+</section>
+
+<section class="block-personal">
+  <div class="rule-head tight">
+    <h2>Projets personnels</h2>
+    <div class="rule"></div>
+  </div>
+  <p class="sub">Construits en dehors du travail, pour tester des idées.</p>
+
+  <div class="stack-list">
+    @for (p of personal; track p.name; let i = $index) {
+      <div class="row reveal-in" [style.--d.ms]="400 + i * 60">
+        <div class="left">
+          <h3 class="mono name">{{ p.name }}</h3>
+          <div class="mono stack">{{ p.stack }}</div>
+        </div>
+        <p class="desc">{{ p.description }}</p>
+      </div>
+    }
+  </div>
+
+  <div class="cta">
+    <a class="btn btn--ghost btn--sm" [href]="identity.github" target="_blank" rel="noopener">
+      Le code sur {{ identity.githubLabel }}
+    </a>
+  </div>
+</section>

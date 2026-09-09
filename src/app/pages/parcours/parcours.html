@@ -1,0 +1,61 @@
+<section class="intro reveal">
+  <p class="mono eyebrow">// parcours</p>
+  <h1 class="page-title">Où ai-je travaillé, et ce que j'y ai fait</h1>
+  <p class="lede">
+    Une agence, une banque, un ministère, et aujourd'hui une entreprise de paiement.
+  </p>
+</section>
+
+<section class="timeline">
+  @for (e of experiences; track e.title; let i = $index) {
+    <div class="reveal" [style.--d.ms]="80 + i * 80">
+      <app-timeline-row [item]="e" />
+    </div>
+  }
+</section>
+
+<section class="tools">
+  <div class="rule-head">
+    <h2>Avec quoi je travaille</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="grid-240">
+    @for (g of tools; track g.label; let i = $index) {
+      <div class="tool card reveal" [style.--d.ms]="80 + i * 70">
+        <div class="mono t-label">{{ g.label }}</div>
+        <p class="t-blurb">{{ g.blurb }}</p>
+        <div class="mono t-lines">
+          @for (line of g.lines; track $index) {
+            <div>{{ line }}</div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="formation">
+  <div class="rule-head">
+    <h2>Formation</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="grid-240">
+    @for (f of formations; track f.title; let i = $index) {
+      <div class="reveal" [style.--d.ms]="80 + i * 70">
+        <app-formation-card [item]="f" />
+      </div>
+    }
+  </div>
+</section>
+
+<section class="langues reveal-in" style="--d: 200ms">
+  <div class="rule-head">
+    <h2>Langues</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="lang-grid">
+    @for (l of languages; track l.name) {
+      <app-language-block [lang]="l" />
+    }
+  </div>
+</section>

@@ -1,0 +1,35 @@
+<section class="intro reveal">
+  <p class="mono eyebrow">// contact</p>
+  <h1 class="page-title narrow">Un outil à construire, une équipe à renforcer ?</h1>
+  <p class="lede">
+    Écrivez-moi en quelques lignes ce que vous voulez obtenir. Je réponds avec une proposition
+    claire, sans jargon.
+  </p>
+</section>
+
+<section class="panel-dark card-contact reveal" style="--d: 120ms">
+  <div class="coords">
+    <div class="coord">
+      <div class="label-on-dark">Email</div>
+      <a class="mono value" [href]="'mailto:' + identity.email">{{ identity.email }}</a>
+    </div>
+
+    @if (showPhone) {
+      <div class="coord">
+        <div class="label-on-dark">Téléphone</div>
+        <a class="mono value" [href]="identity.phoneHref">{{ identity.phone }}</a>
+      </div>
+    }
+
+    <div class="coord">
+      <div class="label-on-dark">Où je suis</div>
+      <div class="mono value value--plain">{{ identity.location }}</div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a class="btn cta-primary" [href]="'mailto:' + identity.email">Écrire un message</a>
+    <a class="btn cta-ghost" [href]="identity.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn cta-ghost" [href]="identity.github" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>

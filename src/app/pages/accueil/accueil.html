@@ -1,0 +1,100 @@
+<section class="hero">
+  <div class="badge reveal-in mono">
+    <span class="dot dot--pulse ok"></span>{{ identity.availability }}
+  </div>
+
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <h1 class="title reveal">
+        {{ identity.firstName }}<br />{{ identity.lastName }}<span class="cursor">_</span>
+      </h1>
+
+      <p class="lead-strong reveal" style="--d: 120ms">{{ hero.leadStrong }}</p>
+      <p class="lead-soft reveal" style="--d: 200ms">{{ hero.lead }}</p>
+
+      <div class="actions reveal" style="--d: 280ms">
+        <a routerLink="/realisations" class="btn btn--primary">Voir mes réalisations</a>
+        <a routerLink="/contact" class="btn btn--ghost">Me contacter</a>
+        <a
+          class="btn btn--ghost"
+          [href]="identity.cv"
+          [attr.download]="identity.cv"
+          type="application/pdf"
+        >
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true">
+            <path
+              d="M8 1.5v9m0 0L4.5 7M8 10.5 11.5 7M2.5 13.5h11"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Télécharger le CV
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-photo reveal-in" style="--d: 160ms">
+      <picture>
+        <source srcset="ronaldo.webp" type="image/webp" />
+        <img
+          src="ronaldo.jpg"
+          width="560"
+          height="560"
+          alt="Portrait de Ronaldo Yonlonfin"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+    </div>
+  </div>
+</section>
+
+<section class="stats reveal-in" style="--d: 360ms" aria-label="Chiffres clés">
+  @for (s of stats; track s.label) {
+    <div class="stat">
+      <div class="mono num">{{ s.value }}</div>
+      <div class="cap">{{ s.label }}</div>
+    </div>
+  }
+</section>
+
+<section class="sites-section">
+  <p class="mono eyebrow">// quelques sites que j'ai réalisés</p>
+  <div class="stack-list">
+    @for (site of sites; track site.url; let i = $index) {
+      <a
+        class="site-row reveal-slide"
+        [style.--d.ms]="400 + i * 70"
+        [href]="site.url"
+        target="_blank"
+        rel="noopener"
+      >
+        <span class="mono s-name">{{ site.name }}</span>
+        <span class="s-note">{{ site.note }}</span>
+      </a>
+    }
+  </div>
+</section>
+
+<section class="parcours-teaser reveal-in" style="--d: 500ms">
+  <div class="panel-dark">
+    <div class="pt-head">
+      <div>
+        <div class="label-on-dark">Mon parcours</div>
+        <h2 class="mono pt-title">Une agence, une banque, un ministère, une fintech</h2>
+      </div>
+      <a routerLink="/parcours" class="btn pt-btn">Voir le parcours détaillé</a>
+    </div>
+    <div class="pt-grid">
+      @for (c of columns; track c.period) {
+        <div class="pt-col" [class.pt-col--current]="c.current">
+          <div class="mono pt-period">{{ c.period }}</div>
+          <div class="pt-role">{{ c.role }}</div>
+          <div class="pt-org">{{ c.org }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
