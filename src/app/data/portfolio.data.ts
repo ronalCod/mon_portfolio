@@ -26,7 +26,7 @@ export const HERO = {
   leadStrong: 'Je construis des sites et des applications web qui font gagner du temps aux équipes.',
   lead:
     "Je m'occupe de ce que l'on voit à l'écran comme de ce qui tourne derrière. Une dizaine de " +
-    "sites en ligne, une expérience en banque, en institution publique et en agence.",
+    "sites en production, et une expérience acquise en banque, dans le public et en agence.",
 };
 
 export interface Stat {
@@ -35,8 +35,8 @@ export interface Stat {
 }
 export const STATS: Stat[] = [
   { value: '10+', label: "sites en ligne aujourd'hui" },
-  { value: '5 ans', label: "d'expérience en entreprise, banque et administration" },
-  { value: '6', label: 'personnes pilotées sur un projet public' },
+  { value: '5 ans', label: 'en entreprise, banque et administration' },
+  { value: '6', label: 'personnes encadrées sur un projet public' },
 ];
 
 export interface SiteLink {

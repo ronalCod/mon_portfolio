@@ -12,15 +12,18 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         routerLinkActive="is-active"
         [routerLinkActiveOptions]="{ exact: true }"
         class="pill mono"
-        >accueil</a
+        >Accueil</a
       >
-      <a routerLink="/realisations" routerLinkActive="is-active" class="pill mono">réalisations</a>
-      <a routerLink="/parcours" routerLinkActive="is-active" class="pill mono">parcours</a>
-      <a routerLink="/contact" routerLinkActive="is-active" class="pill mono">contact</a>
+      <a routerLink="/realisations" routerLinkActive="is-active" class="pill mono">Réalisations</a>
+      <a routerLink="/parcours" routerLinkActive="is-active" class="pill mono">Parcours</a>
+      <a routerLink="/contact" routerLinkActive="is-active" class="pill mono">Contact</a>
     </nav>
   `,
   styles: [
     `
+      :host {
+        display: block;
+      }
       .nav {
         display: flex;
         flex-wrap: wrap;
@@ -33,7 +36,29 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         border-radius: 999px;
         color: var(--ink-2);
         background: transparent;
+        white-space: nowrap;
         transition: background 200ms var(--ease), color 200ms var(--ease);
+      }
+
+      /* Mobile : les 4 entrées tiennent sur une seule ligne */
+      @media (max-width: 560px) {
+        .nav {
+          flex-wrap: nowrap;
+          width: 100%;
+          justify-content: space-between;
+          gap: 3px;
+        }
+        .pill {
+          font-size: 11px;
+          padding: 7px 9px;
+        }
+      }
+      @media (max-width: 340px) {
+        .pill {
+          font-size: 10px;
+          padding: 6px 7px;
+          letter-spacing: -0.02em;
+        }
       }
       .pill:hover {
         color: var(--ink);

@@ -71,6 +71,26 @@ import { Experience } from '../../data/portfolio.data';
         max-width: 62ch;
         text-wrap: pretty;
       }
+
+      /* Sous 500px : la période passe au-dessus du poste et des détails */
+      @media (max-width: 500px) {
+        .row {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .row--current {
+          padding: 22px;
+        }
+        .when {
+          margin-bottom: 2px;
+        }
+        .title {
+          font-size: 18px;
+        }
+        .desc {
+          font-size: 15px;
+        }
+      }
     `,
   ],
 })
